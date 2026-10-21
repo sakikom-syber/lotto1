@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전주페이퍼 생성형 AI 활용 교육 안내</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- OpenStreetMap Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    }
+    #map {
+      height: 380px;
+      width: 100%;
+      border-radius: 0.75rem;
+      z-index: 1;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header / Hero Section -->
+  <header class="gradient-bg text-white py-14 px-4 shadow-xl relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="inline-flex items-center gap-2 bg-indigo-500/20 border border-indigo-400/30 text-indigo-200 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
+        <i class="fa-solid fa-building"></i> 전주페이퍼 임직원 역량 강화 프로그램
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+        생성형 AI 실무 활용 교육
+      </h1>
+      <p class="text-indigo-200 text-base md:text-xl font-light max-w-2xl mx-auto">
+        AI 기반 업무 혁신과 실무 생산성 극대화를 위한 맞춤형 패스트트랙
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10 space-y-8 w-full flex-1">
+
+    <!-- 주요 안내 요약 카드리스트 -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-4">
+        <div class="p-3 bg-indigo-50 text-indigo-600 rounded-xl">
+          <i class="fa-regular fa-calendar-check text-xl"></i>
+        </div>
+        <div>
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">교육 일시</span>
+          <p class="text-slate-900 font-bold text-sm mt-0.5">2026. 10. 22(목) ~ 10. 23(금)</p>
+          <p class="text-xs text-indigo-600 font-medium mt-0.5">09:00 ~ 17:00 (총 14시간)</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-4">
+        <div class="p-3 bg-blue-50 text-blue-600 rounded-xl">
+          <i class="fa-solid fa-location-dot text-xl"></i>
+        </div>
+        <div>
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">교육 장소</span>
+          <p class="text-slate-900 font-bold text-sm mt-0.5">캠틱종합기술원</p>
+          <p class="text-xs text-slate-500 mt-0.5">전주시 덕진구 반룡로 67</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-4">
+        <div class="p-3 bg-emerald-50 text-emerald-600 rounded-xl">
+          <i class="fa-solid fa-users text-xl"></i>
+        </div>
+        <div>
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">교육 대상</span>
+          <p class="text-slate-900 font-bold text-sm mt-0.5">전주페이퍼 임직원</p>
+          <p class="text-xs text-emerald-600 font-medium mt-0.5">출석률 80% 이상 필수</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 커리큘럼 / 교육 내용 -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100">
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+        <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">주요 교육 내용</h2>
+          <p class="text-xs text-slate-500">생성형 AI 생태계 이해부터 실무 즉시 적용 모듈까지</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <div class="flex items-center gap-2 text-indigo-600 font-semibold text-sm mb-2">
+            <i class="fa-solid fa-circle-dot text-xs"></i> 모듈 1. AI 개요 및 프롬프트 엔지니어링
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            ChatGPT, Gemini 등 주요 생성형 AI의 작동 원리 이해 및 의도한 결과물을 정확히 도출하는 질문 설계 기술 습득
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <div class="flex items-center gap-2 text-indigo-600 font-semibold text-sm mb-2">
+            <i class="fa-solid fa-circle-dot text-xs"></i> 모듈 2. 업무 문서 & 보고서 작성 자동화
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            기획서, 이메일, 요약문 초안 생성을 통한 문서 작업 시간 단축 실습 및 맞춤형 템플릿 생성
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <div class="flex items-center gap-2 text-indigo-600 font-semibold text-sm mb-2">
+            <i class="fa-solid fa-circle-dot text-xs"></i> 모듈 3. 데이터 분석 및 인지/시각화
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            비정형 데이터 정리, 데이터 패턴 도출, AI 기반 정보 시각화 및 인사이트 자동 발굴
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <div class="flex items-center gap-2 text-indigo-600 font-semibold text-sm mb-2">
+            <i class="fa-solid fa-circle-dot text-xs"></i> 모듈 4. 실무 문제해결 워크숍
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            전주페이퍼 실무 사례 기반 아이디어 도출 및 프롬프트 프레임워크 설계 모의 프로젝트
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 유의사항 -->
+    <section class="bg-amber-50/70 rounded-2xl p-6 md:p-8 border border-amber-200">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-sm">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h2 class="text-lg font-bold text-amber-950">교육 수료 및 건물 이용 주의사항</h2>
+      </div>
+
+      <ul class="space-y-3 text-sm text-amber-900/90">
+        <li class="flex items-start gap-2.5">
+          <i class="fa-solid fa-circle-check text-amber-600 mt-1 flex-shrink-0"></i>
+          <span><strong>출석률 80% 이상 필수:</strong> 수료증 발급 및 교육 이수를 위해 전 일정 기준 80% 이상 출석해야 합니다.</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <i class="fa-solid fa-circle-check text-amber-600 mt-1 flex-shrink-0"></i>
+          <span><strong>건물 보안 및 수칙 준수:</strong> 캠틱종합기술원 내 지정된 강의실 외 보안 구역 출입을 금하며, 건물 전체가 금연 구역입니다.</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <i class="fa-solid fa-circle-check text-amber-600 mt-1 flex-shrink-0"></i>
+          <span><strong>준비물:</strong> 실습 위주 교육 진행을 위해 개별 실습용 노트북을 반드시 지참해 주시기 바랍니다.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 장소 지도 (Leaflet.js + OpenStreetMap) -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4 pb-4 border-b border-slate-100">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">교육 장소 안내</h2>
+          <p class="text-xs text-slate-500 mt-0.5">캠틱종합기술원 (전북특별자치도 전주시 덕진구 반룡로 67)</p>
+        </div>
+        <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1.5 rounded-lg w-fit">
+          <i class="fa-solid fa-magnifying-glass-plus text-indigo-600"></i> 마우스/터치로 지도 확대·축소 가능
+        </span>
+      </div>
+
+      <!-- Map Element -->
+      <div id="map" class="shadow-inner border border-slate-200"></div>
+
+      <div class="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs md:text-sm">
+        <div class="flex items-center gap-2 text-slate-700">
+          <i class="fa-solid fa-square-parking text-indigo-600 text-base"></i>
+          <span>건물 내 주차장 이용 가능 (교육생 무료 주차 지원)</span>
+        </div>
+        <a href="https://map.naver.com/v5/search/%EC%BA%A0%ED%8B%B1%EC%A2%8B%ED%95%A9%EA%B8%B0%EC%88%A0%EC%9B%90" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-3.5 py-2 rounded-lg transition-colors text-xs">
+          <i class="fa-solid fa-map-location-dot"></i> 네이버 지도로 열기
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-8 px-4 text-center text-xs mt-12 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto space-y-2">
+      <p class="font-semibold text-slate-300">전주페이퍼 & 캠틱종합기술원 생성형 AI 교육 운영본부</p>
+      <p class="text-slate-500">© 2026 Jeonju Paper Co., Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- OpenStreetMap Leaflet Script -->
+  <script>
+    // 캠틱종합기술원 위도/경도
+    const lat = 35.8698;
+    const lng = 127.0863;
+
+    // 지도 초기화 (Zoom level 16)
+    const map = L.map('map').setView([lat, lng], 16);
+
+    // OpenStreetMap 타일 설정 (무료 오픈소스 지도)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // 위치 마커 표시
+    const marker = L.marker([lat, lng]).addTo(map);
+    marker.bindPopup("<div style='font-family: sans-serif; font-size:13px; font-weight: bold; padding: 2px;'>캠틱종합기술원</div><div style='font-size:11px; color:#555;'>전주시 덕진구 반룡로 67</div>").openPopup();
+  </script>
+</body>
+</html>
